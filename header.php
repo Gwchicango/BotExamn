@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Universidad de las Fuerzas Armadas ESPE</title>
+
+    <!-- Google fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300,500,800|Old+Standard+TT' rel='stylesheet'
+        type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:300,500,800' rel='stylesheet' type='text/css'>
+    <!-- Incluye la última versión de Font Awesome en tu archivo HTML principal (por ejemplo, header.php o index.php) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- font awesome -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+
+    <!-- uniform -->
+    <link type="text/css" rel="stylesheet" href="assets/uniform/css/uniform.default.min.css" />
+
+    <!-- animate.css -->
+    <link rel="stylesheet" href="assets/wow/animate.css" />
+
+    <!-- gallery -->
+    <link rel="stylesheet" href="assets/gallery/blueimp-gallery.min.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/Logo.jpeg" type="image/x-icon">
+    <link rel="icon" href="images/Logo.jpeg" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/style.css">
+
+    <style>
+    /* Estilos adicionales para mejorar el diseño */
+    .navbar-brand img {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .navbar-text {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1.0em;
+        margin-left: 10px;
+        color: #fff; /* Color de texto blanco */
+    }
+
+    #cart-count {
+        background-color: #ff0000;
+        color: #fff; /* Color de texto blanco */
+        font-size: 0.9em;
+        padding: 3px 7px;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .animate {
+        animation: bounce 0.5s;
+    }
+
+    /* Estilos adicionales para mejorar el diseño */
+    .navbar-nav>li>a {
+        font-size: 1.2em;
+        padding: 15px 20px;
+        color: #fff; /* Color de texto blanco */
+        font-weight: bold; /* Añadido para negrita */
+    }
+
+    .navbar-nav>li>a:hover {
+        background-color: #f8f8f8;
+        color: #fff; /* Color de texto blanco */
+    }
+
+    @keyframes bounce {
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    /* Hacer el encabezado transparente y superpuesto */
+    .navbar {
+        background-color: rgba(0, 0, 0, 0.5); /* Negro semitransparente */
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 10;
+    }
+
+    /* Asegurarse de que el cuerpo no tenga márgenes adicionales */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Estilo para el texto blanco */
+    .text-white {
+        color: #fff; /* Color de texto blanco */
+    }
+    </style>
+
+</head>
+
+<body id="home">
+
+    <!-- header -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">
+                    <img src="images/Logo.jpeg" width="70" height="70" alt="holiday crown">
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.php"><span class="text-white">Inicio</span></a></li>
+                    <li><a href="index.php"><span class="text-white">¿Quiénes Somos?</span></a></li>
+                    <li><a href="index.php"><span class="text-white">Aliados Estratégicos</span></a></li>
+                    <li><a href="index.php"><span class="text-white">Carreras</span></a></li>
+                    <li><a href="index.php"><span class="text-white">Contactos</span></a></li>
+                </ul>
+            </div><!-- navbar-collapse -->
+        </div><!-- container-fluid -->
+    </nav>
+    <!-- header -->
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+        updateCartCount(cartCount);
+    });
+
+    function updateCartCount(newCount) {
+        const cartCountElement = document.getElementById('cart-count');
+        if (cartCountElement) {
+            cartCountElement.textContent = newCount;
+            cartCountElement.classList.add('animate');
+            setTimeout(() => {
+                cartCountElement.classList.remove('animate');
+            }, 1000); // Duración de la animación
+        }
+    }
+    </script>
+</body>
+
+</html>
